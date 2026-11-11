@@ -32,7 +32,8 @@ export default function App() {
   const editor = useEditor({
     extensions: [StarterKit],
     content: '',
-    editable: false,
+    editable: Boolean(canEdit) && !busy,
+
     onUpdate: () => {
       setDirty(true)
       setMessage('Unsaved changes')
