@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+  color: #172033;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  border: 1px solid #d9dfeb;
+  border-radius: 7px;
+  padding: 9px 12px;
+  background: white;
+  color: #172033;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: #edf2ff;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  padding: 22px;
+  background: white;
+  border-right: 1px solid #dfe4ee;
+}
+
+.sidebar h2 {
+  color: #3155d9;
+  margin-bottom: 5px;
+}
+
+.muted,
+.demo-note {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.demo-note {
+  font-size: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.primary {
+  background: #3155d9;
+  color: white;
+  border: none;
+}
+
+.primary:hover {
+  background: #2443b8;
+}
+
+.wide {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.upload {
+  display: block;
+  padding: 10px;
+  border: 1px solid #d9dfeb;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.upload input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.doc-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.doc-item {
+  width: 100%;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.doc-item small {
+  display: block;
+  margin-top: 5px;
+  color: #64748b;
+}
+
+.selected {
+  background: #edf2ff;
+  border-color: #3155d9;
+}
+
+main {
+  flex: 1;
+  min-width: 0;
+  padding: 28px;
+}
+
+.status {
+  min-height: 20px;
+  color: #3155d9;
+  font-size: 14px;
+}
+
+.topbar,
+.share-controls,
+.share-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #d9dfeb;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 23px;
+  background: white;
+  color: #172033;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #dfe4ee;
+  border-radius: 10px 10px 0 0;
+}
+
+.paper {
+  background: white;
+  border: 1px solid #dfe4ee;
+  border-top: none;
+}
+
+.tiptap {
+  min-height: 400px;
+  padding: 35px;
+  outline: none;
+  overflow-wrap: anywhere;
+}
+
+.tiptap p {
+  margin: 0 0 12px;
+  line-height: 1.7;
+}
+
+.tiptap li p {
+  margin-bottom: 4px;
+}
+
+.sharing {
+  margin-top: 24px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #dfe4ee;
+  border-radius: 10px;
+}
+
+.share-controls {
+  flex-wrap: wrap;
+}
+
+.share-row {
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eef0f5;
+}
+
+.empty {
+  margin-top: 100px;
+  text-align: center;
+  color: #64748b;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .tiptap {
+    padding: 20px;
+  }
+}
