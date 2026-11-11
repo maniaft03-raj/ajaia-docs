@@ -29,16 +29,22 @@ export default function App() {
 
   const canEdit = active?.role === 'owner' || active?.role === 'editor'
 
-  const editor = useEditor({
-    extensions: [StarterKit],
-    content: '',
-    editable: Boolean(canEdit) && !busy,
-
-    onUpdate: () => {
-      setDirty(true)
-      setMessage('Unsaved changes')
+    const editor = useEditor(
+    {
+      extensions: [StarterKit],
+      content: active?.content || {
+        type: 'doc',
+        content: [{ type: 'paragraph' }],
+      },
+      editable: Boolean(canEdit),
+      onUpdate: () => {
+        setDirty(true)
+        setMessage('Unsaved changes')
+      },
     },
-  })
+    [active?.id, active?.role]
+  )
+
 
   async function request(path, method = 'GET', body, identity = user) {
     const response = await fetch(`${API}${path}`, {
